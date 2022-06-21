@@ -1,0 +1,80 @@
+<div class="personalinfo_container">
+  <h2 class="example-full-width">Personal Information</h2>
+  <form [formGroup]="formPersonalInfo">
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name:</mat-label>
+        <input
+          matInput
+          placeholder="Please enter your name"
+          value="firstName"
+          formControlName="firstName"
+        />
+        <mat-error *ngIf="getFirstName?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name:</mat-label>
+        <input
+          matInput
+          placeholder="Please enter your last name"
+          value="lastName"
+          formControlName="lastName"
+        />
+        <mat-error *ngIf="getLastName?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Age:</mat-label>
+        <input
+          matInput
+          placeholder="Please enter your age"
+          value="userAge"
+          formControlName="userAge"
+        />
+        <mat-error *ngIf="getUserAge?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input
+          matInput
+          placeholder="Ex. pat@example.com"
+          value="userEmail"
+          formControlName="userEmail"
+        />
+        <mat-error *ngIf="getUserEmail?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone Number:</mat-label>
+        <input
+          matInput
+          placeholder="Please enter your phone number"
+          value="userTN"
+          formControlName="userTN"
+        />
+        <mat-error *ngIf="getUserTN?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="example-full-width">
+      <button mat-raised-button color="primary" routerLink="/residentialinfo">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

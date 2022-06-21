@@ -1,0 +1,23 @@
+Activity to be developed:
+
+Para el desarrollo de esta actividad se requiere una aplicación la cual servirá para obtener la información personal y lugar de residencia de los usuarios, a continuación se describe los requerimientos:
+
+Crear un toolbar con tres opciones que cumpla los siguientes requisitos:
+Debe estar siempre visible.
+Debe tener 3 botones que me enviaran a las vistas que serán descritas más adelante.
+Para poder moverse entre la vista 1 hacia la 2  se debe verificar(Implementando guards) que los datos solicitados en la vista 1 estén completos.
+Para poder moverse entre la vista 2 hacia la 3  se debe verificar(Implementando guards) que los datos solicitados en la vista 2 están completos.
+Desde la vista 3 puedes volver a la vista 1 y 2 sin verificación.
+Se debe cumplir en la vista 1 los siguientes requerimientos:
+Crear un formulario reactivo el cual se encargará de obtener la información personal del usuario: Nombre, apellido, edad, correo electronico y telefono.
+Todos los campos son requeridos.
+Implementar los conceptos de NgRx para almacenar los datos del formulario.
+Un botón para guardar la información en el store creado anteriormente y que permita moverte hacia la vista 2.
+Se debe cumplir en la vista 2 los siguientes requerimientos:
+Crear un formulario reactivo el cual se encargará de obtener la información de residencia del usuario: Dirección de residencia, barrio, departamento y ciudad.
+Todos los campos son requeridos.
+Implementar los conceptos de NgRx para almacenar los datos del formulario.
+Un botón para guardar la información en el store creado anteriormente y que permita moverte hacia la vista 3.
+Se debe cumplir en la vista 3 los siguientes requerimientos:
+En esta vista se debe mostrar el resumen de la información ingresada en las vistas anteriores.
+Agregar un botón de editar a cada una de las secciones, al momento de hacer click en el botón de editar me debe redireccionar a la vista correspondiente y cargar los datos previamente agregados. Al momento de dar save se debe devolver a la vista del resumen.

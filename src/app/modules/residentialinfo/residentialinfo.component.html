@@ -1,0 +1,66 @@
+<div>
+  <h2 class="example-full-width">Residential Information</h2>
+  <form [formGroup]="formResidentialInfo">
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address:</mat-label>
+        <input
+          matInput
+          placeholder="Please enter your address"
+          value="userAddress"
+          formControlName="userAddress"
+        />
+        <mat-error *ngIf="getUserAddress?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Neighborhood:</mat-label>
+        <input
+          matInput
+          placeholder="Example: Ciudadela 20 De Julio"
+          value="userNeighborhood"
+          formControlName="userNeighborhood"
+        />
+        <mat-error *ngIf="getUserNeighborhood?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>State:</mat-label>
+        <input
+          matInput
+          placeholder="Example: Florida"
+          value="userState"
+          formControlName="userState"
+        />
+        <mat-error *ngIf="getUserState?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>City:</mat-label>
+        <input
+          matInput
+          placeholder="Example: Miami"
+          value="userCity"
+          formControlName="userCity"
+        />
+        <mat-error *ngIf="getUserCity?.hasError('required')"
+          >Field is <strong>required</strong></mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="example-full-width">
+      <button mat-raised-button color="primary" routerLink="/resume">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
