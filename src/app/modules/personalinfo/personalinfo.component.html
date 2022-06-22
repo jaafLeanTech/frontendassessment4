@@ -46,12 +46,7 @@
     <div>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Email:</mat-label>
-        <input
-          matInput
-          placeholder="Ex. pat@example.com"
-          value="userEmail"
-          formControlName="userEmail"
-        />
+        <input matInput placeholder="Ex. pat@example.com" value="userEmail" formControlName="userEmail"/>
         <mat-error *ngIf="getUserEmail?.hasError('required')"
           >Field is <strong>required</strong></mat-error
         >
@@ -72,7 +67,7 @@
       </mat-form-field>
     </div>
     <div class="example-full-width">
-      <button mat-raised-button color="primary" routerLink="/residentialinfo">
+      <button mat-raised-button color="primary" routerLink="/residentialinfo" (click)="saveFormPersonalInfo(formPersonalInfo)">
         Save
       </button>
     </div>

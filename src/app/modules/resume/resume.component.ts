@@ -6,9 +6,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./resume.component.scss"],
 })
 export class ResumeComponent implements OnInit {
+
+
   constructor() {}
+
+
+
+
 
   ngOnInit(): void {
     return;
   }
+
+
 }

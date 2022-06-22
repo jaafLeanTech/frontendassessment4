@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { setPersonalInfo } from '@app-core/store/actions/personalinfo.action';
+import { AppState } from "@app-core/store/models/app.model";
 import { PersonalInfoState } from "@app-core/store/models/personainfo.model";
 import { selectPersonalInfo } from "@app-core/store/selectors/personalinfo.selector";
 import { PersonalInfoInterface } from '@app-models/interfaces';
@@ -13,18 +14,18 @@ import { Store } from '@ngrx/store';
 })
 export class PersonalinfoComponent {
   formPersonalInfo: FormGroup;
-  personalInfoSource: PersonalInfoInterface;
+  personalInfoResource: PersonalInfoInterface;
 
-  constructor(private formBuilder: FormBuilder, private store: Store) {
+  constructor(private formBuilder: FormBuilder, private store: Store<AppState>) {
     this.formPersonalInfo = this.formBuilder.group({
       firstName: ["", Validators.required],
       lastName: ["", Validators.required],
       userAge: ["", Validators.required],
-      userEmail: ["", Validators.required],
+      userEmail: ["", Validators.required, Validators.email],
       userTN: ["", Validators.required],
     });
 
-    this.personalInfoSource = {
+    this.personalInfoResource = {
       firstName: '',
       lastName: '',
       userAge: '',
@@ -40,7 +41,7 @@ export class PersonalinfoComponent {
         userEmail: result.personalInfoInitial.userEmail,
         userTN: result.personalInfoInitial.userTN
       });
-     })
+    })
   }
 
   get getFirstName() {
@@ -67,16 +68,4 @@ export class PersonalinfoComponent {
     this.store.dispatch(setPersonalInfo ({ personalInfo: formPersonalInfoValue.value}))
   }
 
-  // public canGoNextView(): boolean {
-  //   if (
-  //     this.getFirstName.value != "" && this.getLastName.value != ""
-  //     && this.getUserAge.value != '' && this.getUserEmail.value != ''
-  //     && this.getUserTN.value != ''
-  //   ) {
-  //     return true;
-  //   } else {
-  //     alert('Please, enter all the information requeried');
-  //     return false;
-  //   }
-  //}
 }

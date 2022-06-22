@@ -8,15 +8,12 @@ const initialState: PersonalInfoState = {
     lastName: '',
     userAge: '',
     userEmail: '',
-    userTN: ''
+    userTN: '',
   }
 };
 
 const _personalInfoReducer = createReducer(initialState,
-  on(setPersonalInfo, (state, { personalInfo }) => ({...state,
-    personalInfoInitial: personalInfo
-  }))
-);
+  on(setPersonalInfo, (state, { personalInfo }) => ({...state, personalInfoInitial: personalInfo})))
 
 export function personalInfoReducer (state: PersonalInfoState | undefined, action: Action) {
   return _personalInfoReducer(state, action)

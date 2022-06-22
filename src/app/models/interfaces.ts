@@ -5,3 +5,10 @@ export interface PersonalInfoInterface {
   userEmail: string,
   userTN: string,
 }
+
+export interface ResidentialInfoInterface {
+  userAddress: string,
+  userNeighborhood: string,
+  userState: string,
+  userCity: string,
+}

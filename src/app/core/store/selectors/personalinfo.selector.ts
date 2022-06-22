@@ -7,7 +7,8 @@ const selectPersonalInfoSelector = createFeatureSelector<PersonalInfoState>("sto
 
 export const selectPersonalInfo = createSelector(
   selectPersonalInfoSelector,
-  (state: PersonalInfoState) => {
+  (state: PersonalInfoState) =>
+  {
       let personalData = {
         personalInfoInitial: {
           firstName: state.personalInfoInitial.firstName,
@@ -19,4 +20,4 @@ export const selectPersonalInfo = createSelector(
       }
     return personalData
   }
-)
+);
